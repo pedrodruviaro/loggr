@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export default function LoginPage() {
+export function LoginPage() {
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       <div className="flex w-full flex-col justify-center space-y-6 bg-muted p-8 md:w-1/2 md:p-12 lg:p-16">
