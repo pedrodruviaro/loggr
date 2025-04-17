@@ -45,12 +45,16 @@ export function ProfilePage() {
               </div>
             </fieldset>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <fieldset className="grid gap-2">
                 <Label>Location</Label>
                 <Input placeholder="Your place" />
               </fieldset>
               <fieldset className="grid gap-2">
+                <Label>Jobtitle</Label>
+                <Input placeholder="Software Enginner" />
+              </fieldset>
+              <fieldset className="grid gap-2 md:col-span-2 lg:col-span-1">
                 <Label>Website</Label>
                 <Input placeholder="www.yoursite.com" />
               </fieldset>
