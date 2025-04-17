@@ -8,6 +8,7 @@ import { Save } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import { toast } from "sonner"
 
 const profileFormSchema = z.object({
   bio: z.string().min(10).optional(),
@@ -29,6 +30,7 @@ export function ProfilePage() {
 
   function handleUpdateProfile(data: ProfileFormInputs) {
     console.log(data)
+    toast.success("Profile updated successfully!")
   }
 
   return (
