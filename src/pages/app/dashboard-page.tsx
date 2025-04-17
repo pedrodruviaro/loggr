@@ -3,18 +3,15 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { MapPin, Pencil, Plus } from "lucide-react"
+import { Plus } from "lucide-react"
 import { AppLayout } from "@/pages/app/app-layout"
-import { Link } from "react-router-dom"
 import { DayPicker } from "@/components/ui/day-picker"
+import { DashboardUserProfile } from "./dashboard-user-profile"
 
 export function DashboardPage() {
   return (
@@ -83,46 +80,7 @@ export function DashboardPage() {
         </div>
 
         <aside>
-          <Card>
-            <CardHeader>
-              <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                <Avatar className="w-20 h-20">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-
-                <div className="grid gap-2">
-                  <p className="font-semibold">John Doe</p>
-                  <p className="flex items-center gap-1 text-sm">
-                    <MapPin className="size-3" />
-                    <span>Porto Alegre, RS</span>
-                  </p>
-                </div>
-              </div>
-            </CardHeader>
-
-            <CardContent>
-              <div className="grid gap-1">
-                <Badge variant="outline" className="mb-2">
-                  Member since 20/20/20
-                </Badge>
-                <p>Lorem, ipsum.</p>
-                <p className="text-xs">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Magni, eius?
-                </p>
-              </div>
-            </CardContent>
-
-            <CardFooter>
-              <Button size="sm" variant="outline" asChild>
-                <Link to="/app/profile">
-                  <Pencil className="size-3" />
-                  Edit Profile
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <DashboardUserProfile />
         </aside>
       </main>
     </AppLayout>
