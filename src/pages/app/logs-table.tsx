@@ -16,7 +16,6 @@ export function LogsTable() {
             <TableHead className="w-[100px]">Date</TableHead>
             <TableHead className="w-[100px]">Hours</TableHead>
             <TableHead>Name</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
 
