@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Pencil } from "lucide-react"
 import { AppLayout } from "@/pages/app/app-layout"
 import { Link } from "react-router-dom"
+import { DayPicker } from "@/components/ui/day-picker"
 
 export function DashboardPage() {
   return (
@@ -51,6 +52,7 @@ export function DashboardPage() {
           </section>
 
           <section>
+            <h1 className="text-2xl font-bold mb-6">Create new log</h1>
             <form className="space-y-4">
               <div className="grid gap-2">
                 <Label>Lorem</Label>
@@ -64,7 +66,7 @@ export function DashboardPage() {
                 </div>
                 <div className="grid gap-2">
                   <Label>Lorem</Label>
-                  <Input />
+                  <DayPicker />
                 </div>
               </div>
 
@@ -72,8 +74,8 @@ export function DashboardPage() {
             </form>
           </section>
 
-          <section className="border rounded-lg p-10 min-h-[400px]">
-            <p className="text-3xl">table</p>
+          <section>
+            <h1 className="text-2xl font-bold mb-2">Logs this month</h1>
           </section>
         </div>
 
