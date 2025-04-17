@@ -1,16 +1,4 @@
-import { Link } from "react-router-dom"
-import { ThemeToggler } from "@/components/theme/theme-toggler"
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import {
   Card,
   CardContent,
@@ -22,48 +10,14 @@ import {
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { MapPin, Pencil } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { MapPin, Pencil } from "lucide-react"
+import { AppHeader } from "@/pages/app/app-header"
 
 export function DashboardPage() {
   return (
     <div>
-      <header className="py-3 border-b border-muted">
-        <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
-          <Link to="/app" className="font-mono text-xl tracking-tight">
-            logg.r
-          </Link>
-
-          <div className="flex items-center gap-2">
-            <ThemeToggler />
-
-            <Separator
-              orientation="vertical"
-              style={{ height: "1.5rem", marginInline: ".5rem" }}
-            />
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline">
-                  <span className="text-sm">
-                    Hello, <strong className="font-medium">John Doe</strong>
-                  </span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Log out</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-      </header>
+      <AppHeader />
 
       <div className="w-full max-w-6xl mx-auto px-6 my-10 lg:mt-16">
         <main className="grid gap-10 lg:grid-cols-[2fr_1fr] lg:gap-6 lg:items-start">
@@ -125,8 +79,8 @@ export function DashboardPage() {
             </section>
           </div>
 
-          <aside className="h-full">
-            <Card className="sticky top-6">
+          <aside>
+            <Card>
               <CardHeader>
                 <div className="flex flex-col gap-4 md:flex-row md:items-center">
                   <Avatar className="w-20 h-20">
