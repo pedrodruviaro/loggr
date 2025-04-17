@@ -81,7 +81,7 @@ export function AppHeader() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link
                       className="flex items-center gap-2"
                       to="/app/dashboard"
@@ -90,7 +90,7 @@ export function AppHeader() {
                       Dashboard
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link className="flex items-center gap-2" to="/app/profile">
                       <User2 />
                       Profile

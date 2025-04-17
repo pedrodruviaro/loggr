@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query"
 import { House, MapPin, Pencil } from "lucide-react"
 import { Link } from "react-router-dom"
 
-export function DashboardUserProfile() {
+export function UserProfile() {
   const { user } = useAuth()
 
   const { data: profile, isLoading: isProfileLoading } = useQuery({

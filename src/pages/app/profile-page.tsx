@@ -16,7 +16,7 @@ import { updateProfile } from "@/api/profile/update-profile"
 import { Skeleton } from "@/components/ui/skeleton"
 
 const profileFormSchema = z.object({
-  bio: z.string().optional(),
+  bio: z.string().max(300).optional(),
   location: z.string().optional(),
   jobtitle: z.string().optional(),
   website: z.union([z.literal(""), z.string().url()]).optional(),
