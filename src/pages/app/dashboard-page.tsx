@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Pencil } from "lucide-react"
+import { MapPin, Pencil, Plus } from "lucide-react"
 import { AppLayout } from "@/pages/app/app-layout"
 import { Link } from "react-router-dom"
 import { DayPicker } from "@/components/ui/day-picker"
@@ -55,22 +55,25 @@ export function DashboardPage() {
             <h1 className="text-2xl font-bold mb-6">Create new log</h1>
             <form className="space-y-4">
               <div className="grid gap-2">
-                <Label>Lorem</Label>
+                <Label>Name *</Label>
                 <Input />
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="grid gap-2">
-                  <Label>Lorem</Label>
+                  <Label>Time spent (h)*</Label>
                   <Input />
                 </div>
                 <div className="grid gap-2">
-                  <Label>Lorem</Label>
+                  <Label>Log day *</Label>
                   <DayPicker />
                 </div>
               </div>
 
-              <Button>Create</Button>
+              <Button>
+                <Plus />
+                Create
+              </Button>
             </form>
           </section>
 
