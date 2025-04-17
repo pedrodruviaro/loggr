@@ -26,8 +26,10 @@ import { Button } from "@/components/ui/button"
 import { useMutation } from "@tanstack/react-query"
 import { signOut } from "@/api/auth/sign-out"
 import { toast } from "sonner"
+import { useAuth } from "@/hooks/use-auth"
 
 export function AppHeader() {
+  const { user } = useAuth()
   const navigate = useNavigate()
 
   const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
@@ -64,12 +66,19 @@ export function AppHeader() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">
                   <span className="text-sm">
-                    Hello, <strong className="font-medium">John Doe</strong>
+                    Hello, <strong>{user?.displayName}</strong>
                   </span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <div>
+                    <p>My Account</p>
+                    <span className="text-muted-foreground text-xs">
+                      {user?.email}
+                    </span>
+                  </div>
+                </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
