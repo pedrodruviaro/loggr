@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Logo } from "@/components/logo"
 import { ThemeToggler } from "@/components/theme/theme-toggler"
 import { LayoutDashboard, LogOut, User2 } from "lucide-react"
@@ -23,8 +23,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import { useMutation } from "@tanstack/react-query"
+import { signOut } from "@/api/auth/sign-out"
+import { toast } from "sonner"
 
 export function AppHeader() {
+  const navigate = useNavigate()
+
+  const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
+    mutationFn: signOut,
+    mutationKey: ["sign-out"],
+    onSuccess: () => {
+      toast.info("Logout out successfully!", {
+        description: "See you soon! 👋",
+      })
+      navigate("/auth/login")
+    },
+    onError: () =>
+      toast.error("Something failed...", {
+        description: "Please try again",
+      }),
+  })
+
   return (
     <header className="py-3 border-b border-muted">
       <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -98,7 +118,8 @@ export function AppHeader() {
                   <Button
                     size="sm"
                     variant="destructive"
-                    onClick={() => console.log("logout!")}
+                    disabled={isSigningOut}
+                    onClick={() => signOutFn()}
                   >
                     Confirm
                   </Button>

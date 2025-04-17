@@ -7,8 +7,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useMutation } from "@tanstack/react-query"
+import { signIn } from "@/api/auth/sign-in"
+import { toast } from "sonner"
+import { useNavigate } from "react-router-dom"
 
 export function LoginPage() {
+  const navigate = useNavigate()
+
+  const { mutateAsync: signInWithGoogle, isPending } = useMutation({
+    mutationFn: signIn,
+    mutationKey: ["sign-in"],
+    onSuccess: ({ user }) => {
+      toast.success(`Welcome, ${user.displayName}!`)
+      navigate("/app")
+    },
+    onError: () =>
+      toast.error("Something failed", {
+        description: "Refresh the page and try again",
+      }),
+  })
+
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       <div className="flex w-full flex-col justify-center space-y-6 bg-muted p-8 md:w-1/2 md:p-12 lg:p-16">
@@ -32,7 +51,7 @@ export function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
-            <Button>
+            <Button disabled={isPending} onClick={() => signInWithGoogle()}>
               <LogIn className="mr-2 h-4 w-4" />
               Google
             </Button>
