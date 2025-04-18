@@ -1,7 +1,8 @@
-import { AppHeader } from "@/pages/app/app-header"
 import type { ReactNode } from "react"
 
-interface AppLayoutProps {
+import { AppHeader } from "@/pages/app/app-header"
+
+type AppLayoutProps = {
   children: ReactNode
 }
 

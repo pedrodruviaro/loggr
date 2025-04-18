@@ -1,8 +1,7 @@
-import * as React from "react"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
+import * as React from "react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
@@ -10,6 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { cn } from "@/lib/utils"
 
 export function DayPicker() {
   const [date, setDate] = React.useState<Date>()
@@ -18,10 +18,10 @@ export function DayPicker() {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant={"outline"}
+          variant="outline"
           className={cn(
             "w-full justify-start text-left font-normal",
-            !date && "text-muted-foreground"
+            !date && "text-muted-foreground",
           )}
         >
           <CalendarIcon />

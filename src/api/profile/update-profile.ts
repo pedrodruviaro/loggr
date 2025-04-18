@@ -1,10 +1,12 @@
-import { ProfileInput } from "@/entities/profile"
-import { db } from "@/lib/firebase"
 import { doc, setDoc } from "firebase/firestore"
 
-interface UpdateProfileParams extends ProfileInput {
+import type { ProfileInput } from "@/entities/profile"
+
+import { db } from "@/lib/firebase"
+
+type UpdateProfileParams = {
   userId: string
-}
+} & ProfileInput
 
 export async function updateProfile({
   userId,

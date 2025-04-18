@@ -1,8 +1,10 @@
-import { ProfileInput } from "@/entities/profile"
-import { db } from "@/lib/firebase"
 import { doc, getDoc } from "firebase/firestore"
 
-interface GetProfileParams {
+import type { ProfileInput } from "@/entities/profile"
+
+import { db } from "@/lib/firebase"
+
+type GetProfileParams = {
   userId: string
 }
 

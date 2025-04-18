@@ -1,13 +1,15 @@
-import { getAuth, onAuthStateChanged, User } from "firebase/auth"
-import { createContext, useEffect, useState } from "react"
+import type { User } from "firebase/auth"
 import type { ReactNode } from "react"
 
-interface AuthContextType {
+import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { createContext, useEffect, useMemo, useState } from "react"
+
+type AuthContextType = {
   user: User | null
   loading: boolean
 }
 
-interface AuthContextProviderProps {
+type AuthContextProviderProps = {
   children: ReactNode
 }
 
@@ -32,9 +34,9 @@ function AuthContextProvider({ children }: AuthContextProviderProps) {
   }, [auth])
 
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext value={useMemo(() => ({ user, loading }), [user, loading])}>
       {children}
-    </AuthContext.Provider>
+    </AuthContext>
   )
 }
 

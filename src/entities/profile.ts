@@ -1,11 +1,11 @@
-export interface ProfileInput {
+export type ProfileInput = {
   bio?: string
   location?: string
   jobtitle?: string
   website?: string
 }
 
-export interface Profile extends ProfileInput {
+export type Profile = {
   createdAt: string
   updatedAt: string
-}
+} & ProfileInput

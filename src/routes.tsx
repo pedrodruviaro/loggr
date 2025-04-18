@@ -1,9 +1,10 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import { LoginPage } from "@/pages/auth/login-page"
+
+import { ProtectedRoute } from "@/components/protected-route"
+import { PublicOnlyRoute } from "@/components/public-only-route"
 import { DashboardPage } from "@/pages/app/dashboard-page"
 import { ProfilePage } from "@/pages/app/profile-page"
-import { PublicOnlyRoute } from "@/components/public-only-route"
-import { ProtectedRoute } from "@/components/protected-route"
+import { LoginPage } from "@/pages/auth/login-page"
 
 export const router = createBrowserRouter([
   {

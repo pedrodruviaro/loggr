@@ -1,18 +1,22 @@
+import { useMutation } from "@tanstack/react-query"
+import { LayoutDashboard, LogOut, User2 } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
+import { toast } from "sonner"
+
+import { signOut } from "@/api/auth/sign-out"
 import { Logo } from "@/components/logo"
 import { ThemeToggler } from "@/components/theme/theme-toggler"
-import { LayoutDashboard, LogOut, User2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog"
-import { Separator } from "@/components/ui/separator"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,10 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
-import { useMutation } from "@tanstack/react-query"
-import { signOut } from "@/api/auth/sign-out"
-import { toast } from "sonner"
+import { Separator } from "@/components/ui/separator"
 import { useAuth } from "@/hooks/use-auth"
 
 export function AppHeader() {
@@ -66,7 +67,9 @@ export function AppHeader() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">
                   <span className="text-sm">
-                    Hello, <strong>{user?.displayName}</strong>
+                    Hello,
+                    {" "}
+                    <strong>{user?.displayName}</strong>
                   </span>
                 </Button>
               </DropdownMenuTrigger>
@@ -100,7 +103,7 @@ export function AppHeader() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <DialogTrigger asChild>
-                    <button className="flex items-center gap-2 w-full h-full">
+                    <button type="button" className="flex items-center gap-2 w-full h-full">
                       <LogOut />
                       Log out
                     </button>

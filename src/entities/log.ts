@@ -1,4 +1,4 @@
-export interface LogInput {
+export type LogInput = {
   userId: string
   name: string
   timeSpentInSeconds: number
@@ -7,8 +7,8 @@ export interface LogInput {
   yearMonth: string // "2025-04"
 }
 
-export interface Log extends LogInput {
+export type Log = {
   id: string
   createdAt: string
   updatedAt: string
-}
+} & LogInput

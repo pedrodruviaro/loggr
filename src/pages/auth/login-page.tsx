@@ -1,4 +1,9 @@
+import { useMutation } from "@tanstack/react-query"
 import { LogIn } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import { toast } from "sonner"
+
+import { signIn } from "@/api/auth/sign-in"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -7,10 +12,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { useMutation } from "@tanstack/react-query"
-import { signIn } from "@/api/auth/sign-in"
-import { toast } from "sonner"
-import { useNavigate } from "react-router-dom"
 
 export function LoginPage() {
   const navigate = useNavigate()
