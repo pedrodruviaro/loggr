@@ -1,6 +1,3 @@
-import { Plus } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,10 +5,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { DayPicker } from "@/components/ui/day-picker"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { AppLayout } from "@/pages/app/app-layout"
+import { LogsFormCreate } from "@/pages/app/dashboard/logs-form-create"
 import { LogsTable } from "@/pages/app/dashboard/logs-table"
 import { UserProfile } from "@/pages/app/profile/user-profile"
 
@@ -52,35 +47,7 @@ export function DashboardPage() {
             </section>
 
             <section>
-              <Card>
-                <CardHeader>
-                  <h1 className="text-2xl font-bold">Create new log</h1>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid gap-2">
-                      <Label>Name *</Label>
-                      <Input />
-                    </div>
-
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="grid gap-2">
-                        <Label>Time spent (h)*</Label>
-                        <Input />
-                      </div>
-                      <div className="grid gap-2">
-                        <Label>Log day *</Label>
-                        <DayPicker />
-                      </div>
-                    </div>
-
-                    <Button>
-                      <Plus />
-                      Create
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <LogsFormCreate />
             </section>
           </div>
 

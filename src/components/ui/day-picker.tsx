@@ -1,6 +1,5 @@
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
-import * as React from "react"
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -11,9 +10,12 @@ import {
 } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 
-export function DayPicker() {
-  const [date, setDate] = React.useState<Date>()
+type DayPickerProps = {
+  value?: Date
+  onChange?: (date: Date | undefined) => void
+}
 
+export function DayPicker({ value, onChange }: DayPickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -21,18 +23,18 @@ export function DayPicker() {
           variant="outline"
           className={cn(
             "w-full justify-start text-left font-normal",
-            !date && "text-muted-foreground",
+            !value && "text-muted-foreground",
           )}
         >
           <CalendarIcon />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          {value ? format(value, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
         <Calendar
           mode="single"
-          selected={date}
-          onSelect={setDate}
+          selected={value}
+          onSelect={onChange}
           initialFocus
         />
       </PopoverContent>
