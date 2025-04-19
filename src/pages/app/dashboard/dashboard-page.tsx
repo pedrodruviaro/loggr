@@ -12,8 +12,8 @@ import { DayPicker } from "@/components/ui/day-picker"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { AppLayout } from "@/pages/app/app-layout"
-import { LogsTable } from "@/pages/app/logs-table"
-import { UserProfile } from "@/pages/app/user-profile"
+import { LogsTable } from "@/pages/app/dashboard/logs-table"
+import { UserProfile } from "@/pages/app/profile/user-profile"
 
 export function DashboardPage() {
   return (

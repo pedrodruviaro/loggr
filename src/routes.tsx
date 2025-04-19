@@ -2,8 +2,8 @@ import { createBrowserRouter, Navigate } from "react-router-dom"
 
 import { ProtectedRoute } from "@/components/protected-route"
 import { PublicOnlyRoute } from "@/components/public-only-route"
-import { DashboardPage } from "@/pages/app/dashboard-page"
-import { ProfilePage } from "@/pages/app/profile-page"
+import { DashboardPage } from "@/pages/app/dashboard/dashboard-page"
+import { ProfilePage } from "@/pages/app/profile/profile-page"
 import { LoginPage } from "@/pages/auth/login-page"
 
 export const router = createBrowserRouter([

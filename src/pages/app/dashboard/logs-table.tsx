@@ -5,7 +5,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { LogsTableRow } from "@/pages/app/logs-table-row"
+import { LogsTableRow } from "@/pages/app/dashboard/logs-table-row"
 
 export function LogsTable() {
   return (
