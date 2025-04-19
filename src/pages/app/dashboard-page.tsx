@@ -52,33 +52,39 @@ export function DashboardPage() {
             </section>
 
             <section>
-              <h1 className="text-2xl font-bold mb-6">Create new log</h1>
-              <form className="space-y-4">
-                <div className="grid gap-2">
-                  <Label>Name *</Label>
-                  <Input />
-                </div>
+              <Card>
+                <CardHeader>
+                  <h1 className="text-2xl font-bold">Create new log</h1>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-4">
+                    <div className="grid gap-2">
+                      <Label>Name *</Label>
+                      <Input />
+                    </div>
 
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="grid gap-2">
-                    <Label>Time spent (h)*</Label>
-                    <Input />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label>Log day *</Label>
-                    <DayPicker />
-                  </div>
-                </div>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="grid gap-2">
+                        <Label>Time spent (h)*</Label>
+                        <Input />
+                      </div>
+                      <div className="grid gap-2">
+                        <Label>Log day *</Label>
+                        <DayPicker />
+                      </div>
+                    </div>
 
-                <Button>
-                  <Plus />
-                  Create
-                </Button>
-              </form>
+                    <Button>
+                      <Plus />
+                      Create
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
             </section>
           </div>
 
-          <aside>
+          <aside className="sticky top-2">
             <UserProfile />
           </aside>
         </div>
