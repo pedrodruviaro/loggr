@@ -10,6 +10,8 @@ import { LogsFormCreate } from "@/pages/app/dashboard/logs-form-create"
 import { LogsTable } from "@/pages/app/dashboard/logs-table"
 import { UserProfile } from "@/pages/app/profile/user-profile"
 
+import { LogsTableFilters } from "./logs-table-filter"
+
 export function DashboardPage() {
   return (
     <AppLayout>
@@ -57,7 +59,10 @@ export function DashboardPage() {
         </div>
 
         <section>
-          <h1 className="text-2xl font-bold mb-6">Logs this month</h1>
+          <div className="flex flex-wrap gap-4 items-center justify-between mb-6">
+            <h1 className="text-2xl font-bold">Logs this month</h1>
+            <LogsTableFilters />
+          </div>
           <LogsTable />
         </section>
       </main>

@@ -1,14 +1,16 @@
 import { Menu } from "lucide-react"
 
+import type { Log } from "@/entities/log"
+
 import { Button } from "@/components/ui/button"
 import { TableCell, TableRow } from "@/components/ui/table"
 
-export function LogsTableRow() {
+export function LogsTableRow(log: Log) {
   return (
     <TableRow>
-      <TableCell className="font-medium">17/04/2025</TableCell>
-      <TableCell>2,5h</TableCell>
-      <TableCell>Lorem ipsum dolor sit amet.</TableCell>
+      <TableCell className="font-medium">{log.date}</TableCell>
+      <TableCell>{log.timeSpentInSeconds }</TableCell>
+      <TableCell>{log.name}</TableCell>
       <TableCell className="text-right">
         <div>
           <Button size="sm" variant="ghost">
